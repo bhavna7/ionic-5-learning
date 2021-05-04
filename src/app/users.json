@@ -1,0 +1,13 @@
+[
+  {
+    "address": "India",
+    "bDate": "1994-07-22T08:04:52.487+05:30",
+    "email": "test_user@test.com",
+    "fName": "Test",
+    "frequency": {"title": "No thanks", "answer": "never"},
+    "gender": "female",
+    "isChecked": true,
+    "lName": "User",
+    "phone": 7979797979
+  }
+]
