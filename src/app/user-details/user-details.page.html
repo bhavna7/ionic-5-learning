@@ -1,0 +1,170 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>{{ 'User-Details.title' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="isVisible">
+    <ion-grid>
+      <!--- To display the first and last name --->
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <div>
+            <ion-label class="font-weight-bold">{{ 'User-Details.fName' | translate }}</ion-label>
+          </div>
+
+          <div *ngIf="!isEdit" >
+            {{ userDetails.fName }}
+          </div>
+
+          <div *ngIf="isEdit">
+            <ion-input type="text" class="border" [(ngModel)]="userDetails.fName"></ion-input>
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <div>
+            <ion-label class="font-weight-bold">{{ 'User-Details.lName' | translate }}</ion-label>
+          </div>
+
+          <div *ngIf="!isEdit" >
+            {{ userDetails.lName }}
+          </div>
+
+          <div *ngIf="isEdit">
+            <ion-input type="text" class="border" [(ngModel)]="userDetails.lName"></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <!--- To display the email and gender --->
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <div>
+            <ion-label class="font-weight-bold">{{ 'User-Details.email' | translate }}</ion-label>
+          </div>
+
+          <div *ngIf="!isEdit" >
+            {{ userDetails.email }}
+          </div>
+
+          <div *ngIf="isEdit">
+            <ion-input type="text" class="border" [(ngModel)]="userDetails.email"></ion-input>
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <div>
+            <ion-label class="font-weight-bold">{{ 'User-Details.gender' | translate }}</ion-label>
+          </div>
+
+          <div *ngIf="!isEdit" >
+            {{ userDetails.gender }}
+          </div>
+
+          <div *ngIf="isEdit">
+            <ion-radio-group [(ngModel)]="userDetails.gender">
+              <ion-item lines="none">
+                <ion-label>{{ 'User-Details.male' | translate }}</ion-label>
+                <ion-radio slot="start" value="male"></ion-radio>
+              </ion-item>
+          
+              <ion-item lines="none">
+                <ion-label>{{ 'User-Details.female' | translate }}</ion-label>
+                <ion-radio slot="start" value="female"></ion-radio>
+              </ion-item>
+          
+              <ion-item lines="none">
+                <ion-label>{{ 'User-Details.others' | translate }}</ion-label>
+                <ion-radio slot="start" value="others"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <!--- To display the phone and address --->
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <div>
+            <ion-label class="font-weight-bold">{{ 'User-Details.address' | translate }}</ion-label>
+          </div>
+
+          <div *ngIf="!isEdit" >
+            {{ userDetails.address }}
+          </div>
+
+          <div *ngIf="isEdit">
+            <ion-textarea class="border" [(ngModel)]="userDetails.address"></ion-textarea>
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <div>
+            <ion-label class="font-weight-bold">{{ 'User-Details.phone' | translate }}</ion-label>
+          </div>
+
+          <div *ngIf="!isEdit" >
+            {{ userDetails.phone }}
+          </div>
+
+          <div *ngIf="isEdit">
+            <ion-input type="number" class="border" [(ngModel)]="userDetails.phone"></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <!--- To display the birthdate and email frequency --->
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <div>
+            <ion-label class="font-weight-bold">{{ 'User-Details.bDate' | translate }}</ion-label>
+          </div>
+
+          <div *ngIf="!isEdit" >
+            {{ userDetails.displayDate }}
+          </div>
+
+          <div *ngIf="isEdit">
+            <ion-datetime 
+              displayFormat="MMMM - DD - YYYY" 
+              placeholder="Select Date" 
+              class="border"
+              [(ngModel)]="userDetails.bDate"
+            >
+            </ion-datetime>
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <div>
+            <ion-label class="font-weight-bold">{{ 'User-Details.frequency' | translate }}</ion-label>
+          </div>
+
+          <div *ngIf="!isEdit" >
+            {{ userDetails.frequency.title }}
+          </div>
+
+          <div *ngIf="isEdit">
+            <ion-select okText="Okay" cancelText="Dismiss" class="border" [(ngModel)]="userDetails.frequency">
+              <ion-select-option *ngFor="let option of emailOptions" [value]="option">
+                {{ option.title }}
+              </ion-select-option>
+            </ion-select>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card *ngIf="!isVisible">
+    {{ 'User-Details.no' | translate }}
+  </ion-card>
+</ion-content>
