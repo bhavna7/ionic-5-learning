@@ -1,0 +1,61 @@
+{
+  "Tabs": {
+    "user": "User Registration",
+    "list": "User List",
+    "settings": "Settings",
+    "camera": "Camera"
+  },
+  "Common": {
+    "submit": "Submit",
+    "okay": "Okay",
+    "cancel": "Cancel",
+    "close": "Close",
+    "dismiss": "Dismiss",
+    "done": "Done",
+    "delete": "Delete"
+  },
+  "Tab1": {
+    "register": "Register User",
+    "fName": "First Name",
+    "lName": "Last Name",
+    "email": "Email",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "others": "Others",
+    "phone": "Phone Number",
+    "address": "Address",
+    "bDate": "Birthday On",
+    "how": "How likely u wish to recieve emails?",
+    "accept": "Accept all the terms and conditions."
+  },
+  "Tab2": {
+    "title": "Users List"
+  },
+  "Tab3": {
+    "title": "Settings",
+    "toggle": "Toggle Dark Theme",
+    "change": "Switch Language",
+    "english": "English",
+    "hindi": "Hindi",
+    "japnese": "Japnese"
+  },
+  "Tab4": {
+    "title": "Photo Gallery"
+  },
+  "User-Details": {
+    "title": "User Details",
+    "fName": "First Name",
+    "lName": "Last Name",
+    "email": "Email",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "others": "Others",
+    "phone": "Phone Number",
+    "address": "Address",
+    "bDate": "Birthday On",
+    "frequency": "Frequency",
+    "no": "No Details Present"
+  }
+}

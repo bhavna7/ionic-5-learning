@@ -1,0 +1,58 @@
+{
+  "Tabs": {
+    "user": "ユーザー登録",
+    "list": "ユーザーリスト",
+    "settings": "設定",
+    "camera": "カメラ"
+  },
+  "Common": {
+    "submit": "参加する",
+    "okay": "はい",
+    "cancel": "キャンセル",
+    "close": "閉じる",
+    "dismiss": "退出させる",
+    "done": "完了",
+    "delete": "削除"
+  },
+  "Tab1": {
+    "register": "ユーザーの登録",
+    "fName": "ファーストネーム",
+    "lName": "苗字",
+    "email": "Eメール",
+    "gender": "性別",
+    "male": "男性",
+    "female": "女性",
+    "others": "その他",
+    "phone": "電話番号",
+    "address": "住所",
+    "bDate": "誕生日",
+    "how": "メールを受信する可能性はどのくらいありますか？",
+    "accept": "すべての利用規約に同意します。"
+  },
+  "Tab2": {
+    "title": "ユーザーリスト"
+  },
+  "Tab3": {
+    "title": "設定",
+    "toggle": "トグルダークテーマ",
+    "change": "言語の切り替え",
+    "english": "英語",
+    "hindi": "ヒンディー語",
+    "japnese": "日本人"
+  },
+  "User-Details": {
+    "title": "ユーザーの詳細",
+    "fName": "ファーストネーム",
+    "lName": "苗字",
+    "email": "Eメール",
+    "gender": "性別",
+    "male": "男性",
+    "female": "女性",
+    "others": "その他",
+    "phone": "電話番号",
+    "address": "住所",
+    "bDate": "誕生日",
+    "frequency": "周波数",
+    "no": "詳細はありません"
+  }
+}
