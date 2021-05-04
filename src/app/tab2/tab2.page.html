@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{ 'Tab2.title' | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="usersList && usersList.length">
+    <ion-item *ngFor="let user of usersList" lines="full">
+      <ion-icon 
+        name="caret-forward-circle-outline" 
+        slot="end"
+        (click)="openDetails(user)"
+      >
+      </ion-icon>
+      <ion-label>{{ user.fName }} {{ user.lName }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll 
+    (ionInfinite)="loadData($event)" 
+    [disabled]="isDisabled"
+  >  
+    <ion-infinite-scroll-content  
+      loadingSpinner="bubbles"  
+      loadingText="Loading more data...">  
+    </ion-infinite-scroll-content>  
+  </ion-infinite-scroll>  
+</ion-content>
