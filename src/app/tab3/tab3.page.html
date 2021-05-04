@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{ 'Tab3.title' | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item lines="full">
+      <ion-icon name="moon-outline" slot="start"></ion-icon>
+      <ion-label>{{ 'Tab3.toggle' | translate }}</ion-label>
+      <ion-toggle 
+        color="secondary" 
+        slot="end" 
+        (ionChange)="switchMode($event)"
+        [(ngModel)]="isDark"
+      >
+      </ion-toggle>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-icon name="language-outline" slot="start"></ion-icon>
+      <ion-label>{{ 'Tab3.change' | translate }}</ion-label>
+      <ion-select 
+        okText="{{ 'Common.okay' | translate }}" 
+        cancelText="{{ 'Common.cancel' | translate }}"
+        placeholder="Select"
+        (ionChange)="switchLanguage($event)"
+      >
+        <ion-select-option value="en">{{ 'Tab3.english' | translate }}</ion-select-option>
+        <ion-select-option value="hi">{{ 'Tab3.hindi' | translate }}</ion-select-option>
+        <ion-select-option value="jp">{{ 'Tab3.japnese' | translate }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>
