@@ -1,0 +1,152 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{ 'Tab1.register' | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!--- To display the first and last name --->
+  <ion-row class="ion-align-items-center">
+    <ion-col size="4">
+      <ion-label>{{ 'Tab1.fName' | translate }}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-input type="text" class="border" [(ngModel)]="userObject.fName" id="first_name"></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <!--- To display the first and last name --->
+  <ion-row class="ion-align-items-center">
+    <ion-col size="4">
+      <ion-label>{{ 'Tab1.lName' | translate }}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-input type="text" class="border" [(ngModel)]="userObject.lName" id="last_name"></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <!--- To display the email --->
+  <ion-row class="ion-align-items-center">
+    <ion-col size="4">
+      <ion-label>{{ 'Tab1.email' | translate }}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-input type="email" class="border" [(ngModel)]="userObject.email" id="email"></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <!--- To display the gender --->
+  <ion-row class="ion-align-items-center">
+    <ion-col size="4">
+      <ion-label>{{ 'Tab1.gender' | translate }}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-radio-group [(ngModel)]="userObject.gender" id="gender">
+        <ion-item lines="none">
+          <ion-label>{{ 'Tab1.male' | translate }}</ion-label>
+          <ion-radio slot="start" value="male"></ion-radio>
+        </ion-item>
+    
+        <ion-item lines="none">
+          <ion-label>{{ 'Tab1.female' | translate }}</ion-label>
+          <ion-radio slot="start" value="female"></ion-radio>
+        </ion-item>
+    
+        <ion-item lines="none">
+          <ion-label>{{ 'Tab1.others' | translate }}</ion-label>
+          <ion-radio slot="start" value="others"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-col>
+  </ion-row>
+
+  <!--- To display the phone --->
+  <ion-row class="ion-align-items-center">
+    <ion-col size="4">
+      <ion-label>{{ 'Tab1.phone' | translate }}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-input type="number" class="border" [(ngModel)]="userObject.phone" id="phone"></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <!--- To display the address --->
+  <ion-row class="ion-align-items-center">
+    <ion-col size="4">
+      <ion-label>{{ 'Tab1.address' | translate }}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-textarea class="border" [(ngModel)]="userObject.address" id="address"></ion-textarea>
+    </ion-col>
+  </ion-row>
+
+  <!--- To display the birthaday --->
+  <ion-row class="ion-align-items-center">
+    <ion-col size="4">
+      <ion-label>{{ 'Tab1.bDate' | translate }}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-datetime 
+        displayFormat="MMMM - DD - YYYY" 
+        placeholder="Select Date" 
+        class="border"
+        [(ngModel)]="userObject.bDate"
+        doneText="{{ 'Common.okay' | translate }}"
+        cancelText="{{ 'Common.cancel' | translate }}"
+        id="birth_date"
+      >
+      </ion-datetime>
+    </ion-col>
+  </ion-row>
+
+  <!--- To display email frequency --->
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12">
+      <ion-label>{{ 'Tab1.how' | translate }}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-select 
+        okText="{{ 'Common.okay' | translate }}" 
+        cancelText="{{ 'Common.dismiss' | translate}}" 
+        class="border" 
+        [(ngModel)]="userObject.frequency"
+        id="frequency"
+      >
+        <ion-select-option *ngFor="let option of emailOptions" [value]="option">
+          {{ option.title }}
+        </ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+
+  <!--- Terms and conditions --->
+  <ion-row class="ion-align-items-center" class="mt-2">
+    <ion-col size="1">
+      <ion-checkbox color="secondary" [(ngModel)]="userObject.isChecked" id="accept"></ion-checkbox>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>{{ 'Tab1.accept' | translate }}</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <!--- Submit Button --->
+  <ion-row class="ion-align-items-center">
+    <ion-col>
+      <ion-button expand="full" (click)="print()" id="register">
+        <ion-icon slot="start" name="paper-plane-outline"></ion-icon>
+        {{ 'Common.submit' | translate }}
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
